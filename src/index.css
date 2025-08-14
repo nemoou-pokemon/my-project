@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@layer components {
+  .circle {
+    @apply rounded-full bg-white w-[1rem] h-[1rem] sm:w-[min(5rem,3vw)] sm:h-[min(5rem,3vw)] my-4;
+  }
+  .pop {
+    @apply rounded-4xl p-1 bg-[#F3EBE4] flex items-center; /* <-- align items vertically */
+  }
+  .gridBox{
+    @apply gap-2 grid-cols-1 grid-rows-[repeat(4,27.5vh)] grid sm:grid-cols-2 sm:grid-rows-[repeat(2,27.5vh)]
+  }
+  .mIcon{
+    @apply text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block
+  }
+}
+
+
+@layer components{
+  .popText{
+    @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap
+  }
+  .box{
+    @apply p-2 rounded-xl
+  }
+  .titles{
+    @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap mx-0 mb-3.5 
+  }
+}
+.width-indicator {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            z-index: 1000;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
