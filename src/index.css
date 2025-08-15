@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @layer components {
   .circle {
-    @apply rounded-full bg-white w-[1rem] h-[1rem] sm:w-[min(5rem,3vw)] sm:h-[min(5rem,3vw)] my-4;
+    @apply rounded-full bg-white w-[1rem] h-[1rem] sm:w-[min(5rem,3vw)] sm:h-[min(5rem,3vw)] my-0.5 sm:my-4;
   }
   .pop {
     @apply rounded-4xl p-1 bg-[#F3EBE4] flex items-center; /* <-- align items vertically */
