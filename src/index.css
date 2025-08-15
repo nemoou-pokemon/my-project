@@ -12,6 +12,9 @@
   .mIcon{
     @apply text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block
   }
+  .card{
+    @apply w-full h-full 
+  }
 }
 
 
@@ -20,7 +23,7 @@
     @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap
   }
   .box{
-    @apply p-2 rounded-xl
+    @apply p-3 rounded-xl
   }
   .titles{
     @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap mx-0 mb-3.5 
