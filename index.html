@@ -129,6 +129,25 @@
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">Payment Log</h1>
                 <i class="fa-solid fa-newspaper text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block sm:!hidden"></i>
             </div>
+             <div class="flex-shrink-0 outline-none flex gap-3 mt-6 overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" 
+                   onwheel="handleHorizontalScroll(event)">
+                <div class="pop">
+                    <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-border-all sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
+                    <p class="popText">All</p>
+                </div>
+                <div class="pop">
+                    <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-check-to-slot sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
+                    <p class="popText">Accepted</p>
+                </div>
+                <div class="pop">
+                    <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-square-minus sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
+                    <p class="popText">Owe</p>
+                </div>
+                <div class="pop">
+                    <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-ban sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
+                    <p class="popText">Denied</p>
+                </div>
+            </div>
             <div class=" [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden flex flex-col overflow-scroll w-full mt-2 sm:mt-4 p-0.5">
                 <div class=" log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
@@ -140,7 +159,7 @@
                 </div>
                 <div class="log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
-                    <p class="mx-5"> Owed: Rp 5.000</p>
+                    <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
                  <div class=" log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
@@ -152,7 +171,7 @@
                 </div>
                 <div class="log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
-                    <p class="mx-5"> Owed: Rp 5.000</p>
+                    <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
                  <div class=" log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
@@ -164,7 +183,7 @@
                 </div>
                 <div class="log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
-                    <p class="mx-5"> Owed: Rp 5.000</p>
+                    <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
                  <div class=" log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
@@ -176,7 +195,7 @@
                 </div>
                 <div class="log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
-                    <p class="mx-5"> Owed: Rp 5.000</p>
+                    <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
             </div>
         </div>
