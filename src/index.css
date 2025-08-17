@@ -17,8 +17,15 @@
   }
 }
 
+.hiddens{
+  display: none;
+}
+
 
 @layer components{
+  .log{
+    @apply border-0 mt-2 w-full   rounded-xl p-2 bg-white flex flex-row justify-between 
+  }
   .popText{
     @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap
   }

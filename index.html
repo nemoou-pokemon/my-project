@@ -23,20 +23,24 @@
         <div class="flex-[0.6] w-[5rem] bg-[#F3EBE4] rounded-xl shadow hidden md:flex flex-col items-center justify-between">
             <div>
                 <div class="circle bg-[#F3EBE4] flex items-center justify-center"><img class="w-7 h-auto" src="src/assets/logo-removebg-preview.png" alt="" srcset=""></div>
-                <div class="circle flex items-center justify-center"><i class="fa-solid fa-user"></i></div>
+                <div onclick="togglePage(1)" class="circle flex items-center justify-center"><i class="fa-solid fa-user"></i></div>
             </div>
             <div>
-                <div class="circle flex items-center justify-center"><i class="fa-solid fa-house"></i></div>
-                <div class="circle flex items-center justify-center"><i class="fa-regular fa-calendar"></i></div>
-                <div class="circle flex items-center justify-center"><i class="fa-solid fa-receipt"></i></div>
-                <div class="circle flex items-center justify-center"><i class="fa-solid fa-circle-info"></i></div>
+                <div onclick="togglePage(2)"  class="circle flex items-center justify-center"><i class="fa-solid fa-house"></i></div>
+                <div onclick="togglePage(3)" class="circle flex items-center justify-center"><i class="fa-regular fa-calendar"></i></div>
+                <div onclick="togglePage(4)" class="circle flex items-center justify-center"><i class="fa-solid fa-receipt"></i></div>
+                <div onclick="togglePage(5)" class="circle flex items-center justify-center"><i class="fa-solid fa-circle-info"></i></div>
             </div>
             <div>
-                <div class="circle flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
+                <div onclick="togglePage(6)" class="circle flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
                 <div class="circle"> <img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
             </div>
         </div>
-        <div class="flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9 ">
+        <div id="1" class="pages pages1 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2 md:px-12 md:pt-9">
+            <h1 class="font-[Poppins] text-4xl">This is Page 1</h1>
+            <p>This is the second page content</p>
+        </div>
+        <div id="2"   class="pages pages2 flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9 ">
             <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
                 <i class="fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">X TKJ 2</h1>
@@ -115,6 +119,75 @@
                 </div>
             </div>
         </div>
+        <div id="3" class="pages pages3 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2 md:px-12 md:pt-9">
+            <h1 class="font-[Poppins] text-4xl">This is Page 3</h1>
+            <p>This is the second page content</p>
+        </div>
+        <div id="4" class="min-w-[320px] pages pages4 hiddens flex-6 flex flex-col bg-[#FBF9F7]  px-2 sm:px-4 pt-2 md:px-12 md:pt-9">
+            <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
+                <i class="fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
+                <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">Payment Log</h1>
+                <i class="fa-solid fa-newspaper text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block sm:!hidden"></i>
+            </div>
+            <div class=" [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden flex flex-col overflow-scroll w-full mt-2 sm:mt-4 p-0.5">
+                <div class=" log bg-[#C4EBDA] ">
+                    <p class="mx-5"> 17/02/2010</p>
+                    <p class="mx-5"> Accepted</p>
+                </div>
+                <div class="log bg-[#ECC4C4] ">
+                    <p class="mx-5"> 13/03/2015</p>
+                    <p class="mx-5"> Reminder Denied</p>
+                </div>
+                <div class="log bg-[#F0DDC3] ">
+                    <p class="mx-5"> 1/06/2025</p>
+                    <p class="mx-5"> Owed: Rp 5.000</p>
+                </div>
+                 <div class=" log bg-[#C4EBDA] ">
+                    <p class="mx-5"> 17/02/2010</p>
+                    <p class="mx-5"> Accepted</p>
+                </div>
+                <div class="log bg-[#ECC4C4] ">
+                    <p class="mx-5"> 13/03/2015</p>
+                    <p class="mx-5"> Reminder Denied</p>
+                </div>
+                <div class="log bg-[#F0DDC3] ">
+                    <p class="mx-5"> 1/06/2025</p>
+                    <p class="mx-5"> Owed: Rp 5.000</p>
+                </div>
+                 <div class=" log bg-[#C4EBDA] ">
+                    <p class="mx-5"> 17/02/2010</p>
+                    <p class="mx-5"> Accepted</p>
+                </div>
+                <div class="log bg-[#ECC4C4] ">
+                    <p class="mx-5"> 13/03/2015</p>
+                    <p class="mx-5"> Reminder Denied</p>
+                </div>
+                <div class="log bg-[#F0DDC3] ">
+                    <p class="mx-5"> 1/06/2025</p>
+                    <p class="mx-5"> Owed: Rp 5.000</p>
+                </div>
+                 <div class=" log bg-[#C4EBDA] ">
+                    <p class="mx-5"> 17/02/2010</p>
+                    <p class="mx-5"> Accepted</p>
+                </div>
+                <div class="log bg-[#ECC4C4] ">
+                    <p class="mx-5"> 13/03/2015</p>
+                    <p class="mx-5"> Reminder Denied</p>
+                </div>
+                <div class="log bg-[#F0DDC3] ">
+                    <p class="mx-5"> 1/06/2025</p>
+                    <p class="mx-5"> Owed: Rp 5.000</p>
+                </div>
+            </div>
+        </div>
+        <div id="5" class="pages pages5 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2 md:px-12 md:pt-9">
+            <h1 class="font-[Poppins] text-4xl">This is Page 5</h1>
+            <p>This is the second page content</p>
+        </div>
+        <div id="6" class="pages pages6 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2 md:px-12 md:pt-9">
+            <h1 class="font-[Poppins] text-4xl">This is Page 6</h1>
+            <p>This is the second page content</p>
+        </div>
         <div class="h-full bg-[#F3EBE4] rounded-2xl shadow hidden sm:flex flex-3  flex-col ">
             <div class="flex flex-col w-full">
                 <div class="flex flex-row w-full h-37.5">
@@ -184,6 +257,30 @@
     </div>
 
      <script>
+
+function togglePage(num) {
+    // Hide all pages first
+    document.querySelectorAll(".pages").forEach(page => {
+        page.classList.add("hiddens");
+    });
+    
+    // Show the selected page
+    if (num === 1) {
+        document.querySelector(".pages1").classList.remove("hiddens");
+    } else if (num === 2) {
+        document.querySelector(".pages2").classList.remove("hiddens");
+    }else if (num === 3) {
+        document.querySelector(".pages3").classList.remove("hiddens");
+    }else if (num === 4) {
+        document.querySelector(".pages4").classList.remove("hiddens");
+    }else if (num === 5) {
+        document.querySelector(".pages5").classList.remove("hiddens");
+    }else if (num === 6) {
+        document.querySelector(".pages6").classList.remove("hiddens");
+    }
+}
+
+
         function handleHorizontalScroll(event) {
             event.preventDefault();
             event.currentTarget.scrollLeft += event.deltaY *0.3;
