@@ -36,33 +36,56 @@
                 <div class="circle"> <img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
             </div>
         </div>
+         <div class="leftSide h-3/5 hidden ml-[0.35rem] w-[3.5rem] gap-0 bg-[#F3EBE4] rounded-xl shadow">
+            <div class="h-full mx-auto  bg-[#F3EBE4] rounded-xl shadow  flex flex-col items-center justify-between">
+                 <div class="flex flex-col gap-1 mt-2">
+                    <div class="h-[1.75rem] w-[1.75rem] circle bg-[#F3EBE4] flex items-center justify-between">
+                         <img class="w-7 h-auto" src="src/assets/logo-removebg-preview.png" alt="" srcset="">
+                    </div>
+                    <div onclick="togglePage(1)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                 </div>
+                    <div class="flex flex-col gap-1">
+                        <div onclick="togglePage(2)"  class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-house"></i></div>
+                        <div onclick="togglePage(3)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-regular fa-calendar"></i></div>
+                        <div onclick="togglePage(4)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-receipt"></i></div>
+                        <div onclick="togglePage(5)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-circle-info"></i></div>
+                    </div>
+                    <div class="flex flex-col gap-1 mb-2">
+                        <div onclick="togglePage(6)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
+                        <div class="h-[1.75rem] w-[1.75rem] circle"> <img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
+                    </div>
+            </div>
+            
+        </div>
         <div id="1" class="pages pages1 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2 md:px-12 md:pt-9">
             <h1 class="font-[Poppins] text-4xl">This is Page 1</h1>
             <p>This is the second page content</p>
         </div>
         <div id="2"   class="pages pages2 flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9 ">
             <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
-                <i class="fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
+                <i onclick="toggleLeft()" class="leftIcon z-100 fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">X TKJ 2</h1>
                 <i class="fa-solid fa-newspaper text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block sm:!hidden"></i>
             </div>
             <div class="flex-shrink-0 outline-none flex gap-3 mt-6 overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" 
                    onwheel="handleHorizontalScroll(event)">
-                <div class="pop">
+                <div onclick="toggleCards(0)" class="pop">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-border-all sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">All</p>
                 </div>
-                <div class="pop">
+                <div onclick="toggleCards(1)" class="pop">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-bars-progress sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Main</p>
                 </div>
-                <div class="pop">
+                <div onclick="toggleCards(2)" class="pop">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-sliders sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Special</p>
                 </div>
             </div>
             <div class="flex flex-col mt-6 overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                <div class="mb-6">
+                <div class="cards main mb-6">
                     <p class="titles ml-0">Main</p>
                     <div class="outline-0  gridBox">
                         <div class="box bg-[#ECC4C4]">
@@ -108,7 +131,7 @@
                     </div>
                 </div>
 
-                <div class="mb-6">
+                <div class="cards special mb-6">
                     <p class="titles ml-0">Special</p>
                     <div class="gridBox">
                         <div class="box bg-[#ECC4C4]"></div>
@@ -123,80 +146,81 @@
             <h1 class="font-[Poppins] text-4xl">This is Page 3</h1>
             <p>This is the second page content</p>
         </div>
-        <div id="4" class="min-w-[320px] pages pages4 hiddens flex-6 flex flex-col bg-[#FBF9F7]  px-2 sm:px-4 pt-2 md:px-12 md:pt-9">
+        <div id="4" class="min-w-[320px] pages pages4 hiddens flex-6 flex flex-col bg-[#FBF9F7]  px-4 pt-2 md:px-12 md:pt-9">
             <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
-                <i class="fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
+                <i onclick="toggleLeft()" class="leftIcon fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">Payment Log</h1>
                 <i class="fa-solid fa-newspaper text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block sm:!hidden"></i>
             </div>
              <div class="flex-shrink-0 outline-none flex gap-3 mt-6 overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" 
                    onwheel="handleHorizontalScroll(event)">
-                <div class="pop">
+                <div onclick="toggleLog(0)"  class="pop">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-border-all sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">All</p>
                 </div>
-                <div class="pop">
+                <div onclick="toggleLog(1)"  class="pop">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-check-to-slot sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Accepted</p>
                 </div>
-                <div class="pop">
+                <div onclick="toggleLog(2)"  class="pop">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-square-minus sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Owe</p>
                 </div>
-                <div class="pop">
+                <div onclick="toggleLog(3)"  class="pop">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-ban sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Denied</p>
                 </div>
             </div>
             <div class=" [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden flex flex-col overflow-scroll w-full mt-2 sm:mt-4 p-0.5">
-                <div class=" log bg-[#C4EBDA] ">
+                <div class="acc log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
                     <p class="mx-5"> Accepted</p>
                 </div>
-                <div class="log bg-[#ECC4C4] ">
+                <div class="denied log bg-[#ECC4C4] ">
                     <p class="mx-5"> 13/03/2015</p>
                     <p class="mx-5"> Reminder Denied</p>
                 </div>
-                <div class="log bg-[#F0DDC3] ">
+                <div class="owe log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
                     <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
-                 <div class=" log bg-[#C4EBDA] ">
+                <div class="acc log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
                     <p class="mx-5"> Accepted</p>
                 </div>
-                <div class="log bg-[#ECC4C4] ">
+                <div class="denied log bg-[#ECC4C4] ">
                     <p class="mx-5"> 13/03/2015</p>
                     <p class="mx-5"> Reminder Denied</p>
                 </div>
-                <div class="log bg-[#F0DDC3] ">
+                <div class="owe log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
                     <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
-                 <div class=" log bg-[#C4EBDA] ">
+                <div class="acc log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
                     <p class="mx-5"> Accepted</p>
                 </div>
-                <div class="log bg-[#ECC4C4] ">
+                <div class="denied log bg-[#ECC4C4] ">
                     <p class="mx-5"> 13/03/2015</p>
                     <p class="mx-5"> Reminder Denied</p>
                 </div>
-                <div class="log bg-[#F0DDC3] ">
+                <div class="owe log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
                     <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
-                 <div class=" log bg-[#C4EBDA] ">
+                <div class="acc log bg-[#C4EBDA] ">
                     <p class="mx-5"> 17/02/2010</p>
                     <p class="mx-5"> Accepted</p>
                 </div>
-                <div class="log bg-[#ECC4C4] ">
+                <div class="denied log bg-[#ECC4C4] ">
                     <p class="mx-5"> 13/03/2015</p>
                     <p class="mx-5"> Reminder Denied</p>
                 </div>
-                <div class="log bg-[#F0DDC3] ">
+                <div class="owe log bg-[#F0DDC3] ">
                     <p class="mx-5"> 1/06/2025</p>
                     <p class="mx-5"> Owe: Rp 5.000</p>
                 </div>
+                
             </div>
         </div>
         <div id="5" class="pages pages5 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2 md:px-12 md:pt-9">
@@ -276,7 +300,77 @@
     </div>
 
      <script>
+let currentValue = 0
+function toggleLeft(){
+    const side = document.querySelector(".leftSide");
+    if(currentValue === 0){
+        side.classList.remove("hidden");
+        side.classList.add("absolute", "z-50", "left-2", "top-20"); // Position it absolutely
+        document.querySelectorAll(".leftIcon").forEach(icon =>{
+            icon.classList.remove("fa-bars")
+            icon.classList.add("fa-xmark")
+        })
+        currentValue = 1;
+    } else {
+        side.classList.add("hidden");
+        side.classList.remove("absolute", "z-50", "left-2", "top-2"); // Remove absolute positioning
+        document.querySelectorAll(".leftIcon").forEach(icon =>{
+            icon.classList.remove("fa-xmark")
+            icon.classList.add("fa-bars")
+        })
+        currentValue = 0;
+    }
+}
 
+function toggleCards(num) {
+    document.querySelectorAll(".cards").forEach(card =>{
+        card.classList.add("hiddens")
+    })
+   if(num===0){
+    document.querySelectorAll(".cards").forEach(card =>{
+        card.classList.remove("hiddens")
+    })
+   }else if(num===1){
+    document.querySelectorAll(".main").forEach(card =>{
+        card.classList.remove("hiddens")
+    })
+   }else if(num===2){
+    document.querySelectorAll(".special").forEach(card =>{
+        card.classList.remove("hiddens")
+    })
+   }
+}
+
+function toggleLog(num) {
+    document.querySelectorAll(".log").forEach(log =>{
+        log.classList.add("hiddens")
+    })
+   if(num===0){
+    document.querySelectorAll(".log").forEach(log =>{
+        log.classList.remove("hiddens")
+    })
+   }else if(num===1){
+    document.querySelectorAll(".acc").forEach(log =>{
+        log.classList.remove("hiddens")
+    })
+   }else if(num===2){
+    document.querySelectorAll(".owe").forEach(log =>{
+        log.classList.remove("hiddens")
+    })
+   }else if(num===3){
+    document.querySelectorAll(".denied").forEach(log =>{
+        log.classList.remove("hiddens")
+    })
+   }
+}
+window.addEventListener('resize', function() {
+    const side = document.querySelector(".leftSide");
+    if (window.innerWidth >= 768) { // 768px is md breakpoint
+        side.classList.add("hidden");
+        side.classList.remove("absolute", "z-50", "left-2", "top-20");
+        currentValue = 0;
+    }
+});
 function togglePage(num) {
     // Hide all pages first
     document.querySelectorAll(".pages").forEach(page => {
