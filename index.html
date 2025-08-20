@@ -18,7 +18,7 @@
     <div class="width-indicator" id="heightIndicator" style="left: 160px;">
     Height: <span id="heightValue"></span>px
 </div> -->
-
+<div onclick="blurCancel(this)" class="overlay blurEffect hiddens"></div>
     <div class="flex flex-row gap-2 w-[98%] h-[95vh] m-auto mt-2">
         <div class="flex-[0.6] w-[5rem] bg-[#F3EBE4] rounded-xl shadow hidden md:flex flex-col items-center justify-between">
             <div>
@@ -65,9 +65,9 @@
         </div>
         <div id="2"   class="pages pages2 flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9 ">
             <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
-                <i onclick="toggleLeft()" class="leftIcon z-100 fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
+                <i onclick="toggleLeft()" class="w-[3rem] text-left flex-shrink-0 leftIcon z-100 fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">X TKJ 2</h1>
-                <i class="fa-solid fa-newspaper text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block sm:!hidden"></i>
+                <i class="w-[3rem] text-right flex-shrink-0 fa-solid fa-newspaper text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block sm:!hidden"></i>
             </div>
             <div class="flex-shrink-0 outline-none flex gap-3 mt-6 overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" 
                    onwheel="handleHorizontalScroll(event)">
@@ -301,24 +301,37 @@
 
      <script>
 let currentValue = 0
+function blurCancel(element){
+    element.classList.add("hiddens")
+    const side = document.querySelector(".leftSide");
+    side.classList.add("hidden");
+        side.classList.remove("absolute", "z-100", "left-2", "top-2"); // Remove absolute positioning
+        document.querySelectorAll(".leftIcon").forEach(icon =>{
+            icon.classList.remove("fa-xmark")
+            icon.classList.add("fa-bars")
+        })
+}
 function toggleLeft(){
     const side = document.querySelector(".leftSide");
     if(currentValue === 0){
         side.classList.remove("hidden");
-        side.classList.add("absolute", "z-50", "left-2", "top-20"); // Position it absolutely
+        side.classList.add("absolute", "z-100", "left-2", "top-20"); // Position it absolutely
         document.querySelectorAll(".leftIcon").forEach(icon =>{
             icon.classList.remove("fa-bars")
             icon.classList.add("fa-xmark")
         })
         currentValue = 1;
+        blur = document.querySelector(".blurEffect")
+        blur.classList.remove("hiddens")
     } else {
         side.classList.add("hidden");
-        side.classList.remove("absolute", "z-50", "left-2", "top-2"); // Remove absolute positioning
+        side.classList.remove("absolute", "z-100", "left-2", "top-2"); // Remove absolute positioning
         document.querySelectorAll(".leftIcon").forEach(icon =>{
             icon.classList.remove("fa-xmark")
             icon.classList.add("fa-bars")
         })
         currentValue = 0;
+        blur.classList.add("hiddens")
     }
 }
 
@@ -365,9 +378,14 @@ function toggleLog(num) {
 }
 window.addEventListener('resize', function() {
     const side = document.querySelector(".leftSide");
+    const blur = document.querySelector(".blurEffect")
+    const left = document.querySelector(".leftIcon")
     if (window.innerWidth >= 768) { // 768px is md breakpoint
         side.classList.add("hidden");
         side.classList.remove("absolute", "z-50", "left-2", "top-20");
+        blur.classList.add("hiddens")
+        left.classList.remove("fa-xmark")
+        left.classList.add("fa-bars", "hiddens")
         currentValue = 0;
     }
 });

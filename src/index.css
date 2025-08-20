@@ -35,6 +35,9 @@
   .titles{
     @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap mx-0 mb-3.5 
   }
+  .overlay{
+    @apply fixed z-50  w-[100vw] h-[100vh] top-0 left-0 backdrop-blur-[2px]
+  }
 }
 .width-indicator {
             position: fixed;
