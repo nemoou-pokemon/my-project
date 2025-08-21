@@ -38,6 +38,9 @@ body{
   .titles{
     @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap mx-0 mb-3.5 
   }
+  input[type="text"], [type="number"]{
+    @apply outline-[0.5px] border-[0.5px] border-[#e1e1e1] rounded-xl py-2 px-4
+  }
   
 .blurEffect {
   @apply fixed top-0 left-0 w-screen h-screen backdrop-blur-[2px] bg-black/20 z-50;
