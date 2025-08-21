@@ -20,6 +20,9 @@
 .hiddens{
   display: none;
 }
+body{
+  overflow: hidden;
+}
 
 
 @layer components{
@@ -35,9 +38,25 @@
   .titles{
     @apply font-[Poppins] my-0 ml-4 mr-6 font-medium text-[0.75rem] whitespace-nowrap mx-0 mb-3.5 
   }
-  .overlay{
-    @apply fixed z-50  w-[100vw] h-[100vh] top-0 left-0 backdrop-blur-[2px]
-  }
+  
+.blurEffect {
+  @apply fixed top-0 left-0 w-screen h-screen backdrop-blur-[2px] bg-black/20 z-50;
+  pointer-events: none;             /* disable clicks until active */
+  clip-path: circle(0% at 0 0);     /* start as tiny circle at top-left */
+  transition: clip-path 0.6s ease;  /* smooth expansion */
+}
+
+.blurEffect.active {
+  pointer-events: auto;
+  clip-path: circle(150% at 0 0);   /* expand huge circle from top-left */
+}
+
+.cancel{
+  clip-path: circle(0% at 0 0);  
+}
+
+
+
 }
 .width-indicator {
             position: fixed;

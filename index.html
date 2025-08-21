@@ -18,7 +18,7 @@
     <div class="width-indicator" id="heightIndicator" style="left: 160px;">
     Height: <span id="heightValue"></span>px
 </div> -->
-<div onclick="blurCancel(this)" class="overlay blurEffect hiddens"></div>
+<div onclick="blurCancel(this)" class="blurEffect "></div>
     <div class="flex flex-row gap-2 w-[98%] h-[95vh] m-auto mt-2">
         <div class="flex-[0.6] w-[5rem] bg-[#F3EBE4] rounded-xl shadow hidden md:flex flex-col items-center justify-between">
             <div>
@@ -36,9 +36,9 @@
                 <div class="circle"> <img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
             </div>
         </div>
-         <div class="leftSide h-3/5 hidden ml-[0.35rem] w-[3.5rem] gap-0 bg-[#F3EBE4] rounded-xl shadow">
+         <div class="leftSide h-min hidden ml-[0.35rem] w-[3.5rem] gap-0 bg-[#F3EBE4] rounded-xl shadow">
             <div class="h-full mx-auto  bg-[#F3EBE4] rounded-xl shadow  flex flex-col items-center justify-between">
-                 <div class="flex flex-col gap-1 mt-2">
+                 <div class="flex flex-col  mt-1">
                     <div class="h-[1.75rem] w-[1.75rem] circle bg-[#F3EBE4] flex items-center justify-between">
                          <img class="w-7 h-auto" src="src/assets/logo-removebg-preview.png" alt="" srcset="">
                     </div>
@@ -46,13 +46,13 @@
                         <i class="fa-solid fa-user"></i>
                     </div>
                  </div>
-                    <div class="flex flex-col gap-1">
+                    <div class="flex flex-col ">
                         <div onclick="togglePage(2)"  class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-house"></i></div>
                         <div onclick="togglePage(3)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-regular fa-calendar"></i></div>
                         <div onclick="togglePage(4)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-receipt"></i></div>
                         <div onclick="togglePage(5)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-circle-info"></i></div>
                     </div>
-                    <div class="flex flex-col gap-1 mb-2">
+                    <div class="flex flex-col  mb-1">
                         <div onclick="togglePage(6)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
                         <div class="h-[1.75rem] w-[1.75rem] circle"> <img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
                     </div>
@@ -311,40 +311,55 @@
     </div>
 
      <script>
-let currentValue = 0
+
 function blurCancel(element){
-    element.classList.add("hiddens")
+    element.classList.add("cancel")
+    element.classList.remove("active")
     const side = document.querySelector(".leftSide");
     side.classList.add("hidden");
         side.classList.remove("absolute", "z-100", "left-2", "top-2"); // Remove absolute positioning
         document.querySelectorAll(".leftIcon").forEach(icon =>{
             icon.classList.remove("fa-xmark")
             icon.classList.add("fa-bars")
+            currentValue = 0
         })
 }
-function toggleLeft(){
-    const side = document.querySelector(".leftSide");
-    if(currentValue === 0){
-        side.classList.remove("hidden");
-        side.classList.add("absolute", "z-100", "left-2", "top-20"); // Position it absolutely
-        document.querySelectorAll(".leftIcon").forEach(icon =>{
-            icon.classList.remove("fa-bars")
-            icon.classList.add("fa-xmark")
-        })
-        currentValue = 1;
-        blur = document.querySelector(".blurEffect")
-        blur.classList.remove("hiddens")
-    } else {
-        side.classList.add("hidden");
-        side.classList.remove("absolute", "z-100", "left-2", "top-2"); // Remove absolute positioning
-        document.querySelectorAll(".leftIcon").forEach(icon =>{
-            icon.classList.remove("fa-xmark")
-            icon.classList.add("fa-bars")
-        })
-        currentValue = 0;
-        blur.classList.add("hiddens")
-    }
+let currentValue = 0;
+
+function toggleLeft() {
+  const side = document.querySelector(".leftSide");
+  const blur = document.querySelector(".blurEffect");
+
+  if (currentValue === 0) {
+    // --- Show sidebar ---
+    side.classList.remove("hidden");
+    side.classList.add("absolute", "z-100", "left-2", "top-20");
+    document.querySelectorAll(".leftIcon").forEach(icon => {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-xmark");
+    });
+    currentValue = 1;
+
+    // --- Show blur with animation ---
+    blur.classList.add("active");
+
+  } else {
+    // --- Hide sidebar ---
+    side.classList.add("hidden");
+    side.classList.remove("absolute", "z-100", "left-2", "top-2");
+    document.querySelectorAll(".leftIcon").forEach(icon => {
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+    });
+    currentValue = 0;
+
+    // --- Hide blur with animation ---
+    blur.classList.remove("active");
+  }
 }
+
+
+
 
 function toggleCards(num) {
     document.querySelectorAll(".cards").forEach(card =>{
@@ -387,6 +402,8 @@ function toggleLog(num) {
     })
    }
 }
+
+
 window.addEventListener('resize', function() {
     const side = document.querySelector(".leftSide");
     const blur = document.querySelector(".blurEffect")
