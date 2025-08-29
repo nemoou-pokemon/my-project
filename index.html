@@ -260,25 +260,28 @@
             </div>
             <div class="flex-shrink-0 outline-none flex gap-3 mt-6 overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" 
                    onwheel="handleHorizontalScroll(event)">
-                <div  class="pop">
+                <div  class="pop" data-panel="profile">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-user sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Profile</p>
                 </div>
-                <div   class="pop">
+                <div   class="pop" data-panel="security">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-lock sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Security</p>
                 </div>
-                <div   class="pop">
+                <div   class="pop" data-panel="privacy">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-shield sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Privacy</p>
                 </div>
-                <div   class="pop">
+                <div   class="pop" data-panel="delete">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-trash-can sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
                     <p class="popText">Delete</p>
                 </div>
             </div>
-            <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
-
+            <div class="w-full h-min  flex gap-5 sm:gap-4 mt-5  justify-between sm:justify-start">
+                <div id="profile-panel" class="bg-[#f7d558] rounded-xl w-full h-[60vh] on"></div>
+                <div id="security-panel" class="bg-[#f79258] rounded-xl w-full h-[60vh] off"></div>
+                <div id="privacy-panel" class="bg-[#c558f7] rounded-xl w-full h-[60vh] off"></div>
+                <div id="delete-panel" class="bg-[#5870f7] rounded-xl w-full h-[60vh] off"></div>
             </div>
         </div>
         <div class="h-full bg-[#F3EBE4] rounded-2xl shadow hidden sm:flex flex-3  flex-col ">
@@ -350,6 +353,25 @@
     </div>
 
      <script>
+const accountMenu = document.querySelectorAll('[data-panel]')
+function changePanel(panelName){
+    
+    document.querySelectorAll('[id$="-panel"]').forEach(panel => {
+        panel.classList.remove("on");
+        panel.classList.add("off");
+    });
+
+    const activePanels = document.getElementById(panelName + "-panel")
+    activePanels.classList.add("on")
+    activePanels.classList.remove("off")
+}
+accountMenu.forEach(items =>{
+   items.addEventListener('click', function(e){
+    const panelName = this.getAttribute('data-panel')
+    console.log(panelName)
+    changePanel(panelName)
+   })
+})
 
 function blurCancel(element){
     element.classList.add("cancel")
