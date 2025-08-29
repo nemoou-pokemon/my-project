@@ -47,6 +47,12 @@ body{
   textarea:focus{
     @apply !border-[#00c66a] !border-[1.5px]
   }
+  .on{
+    @apply relative opacity-100 visible translate-x-[0px] transition-all duration-300 ease-in-out ;
+  }
+  .off{
+    @apply absolute opacity-0 invisible translate-x-[20px]
+  }
   
 .blurEffect {
   @apply fixed top-0 left-0 w-screen h-screen backdrop-blur-[2px] bg-black/20 z-50;
