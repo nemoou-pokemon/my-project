@@ -32,8 +32,8 @@
                 <div onclick="togglePage(5)" class="circle flex items-center justify-center"><i class="fa-solid fa-circle-info"></i></div>
             </div>
             <div>
-                <div onclick="togglePage(6)" class="circle flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
-                <div class="circle"> <img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
+                <div onclick="togglePage(6)" class=" circle flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
+                <div class="profilePic  bg-[#e7e7e7] bg-cover bg-center bg-no-repeat circle"> </div>
             </div>
         </div>
          <div class="leftSide h-min hidden ml-[0.35rem] w-[3.5rem] gap-0 bg-[#F3EBE4] rounded-xl shadow">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="flex flex-col  mb-2">
                         <div onclick="togglePage(6)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-gear"></i></div>
-                        <div class="h-[1.75rem] w-[1.75rem] circle"> <img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
+                        <div class="profilePic profC bg-[#e7e7e7] bg-cover bg-center bg-no-repeat h-[1.75rem] w-[1.75rem] circle"> </div>
                     </div>
             </div>
             
@@ -282,7 +282,7 @@
                     <h1 class="font-[Poppins] font-[450] text-[1rem] sm:text-[min(4rem,2vw)] mb-3">Profile Information</h1>
                     <div class="gap-2 sm:gap-5 flex w-full items-center ">
                         <div class="relative  p-1">
-                            <div id="profilePic"  class="profC bg-[#e7e7e7] bg-cover bg-center bg-no-repeat"></div>
+                            <div   class="profilePic profC bg-[#e7e7e7] bg-cover bg-center bg-no-repeat"></div>
                             <div onclick="triggerFileInput()" class= " absolute  bottom-1.5 right-1.5  w-4 h-4 sm:w-[min(10rem,2.2vw)] sm:h-[min(10rem,2.2vw)] bg-blue-500 rounded-full">
                                <div class="w-full h-full flex justify-center items-center">
                                    <i class="fa-solid fa-camera sm:text-[min(3rem,1.35vw)] text-white text-[0.65rem]"></i>
@@ -320,7 +320,7 @@
                     </div>
                     <div class="flex-10 flex items-center justify-center">
                         <div class="flex flex-col items-center">
-                            <div class="circle my-3 w-[3rem] h-[3rem] "><img class="rounded-full" src="src/assets/Screenshot 2025-08-15 155035.png" alt="" srcset=""></div>
+                            <div class="profilePic profC bg-[#e7e7e7] bg-cover bg-center bg-no-repeat circle my-3 w-[3rem] h-[3rem] "></div>
                             <p class="popText mx-auto text-xl">Bimo Satrio</p>
                         </div>
                     </div>
@@ -392,11 +392,16 @@ function triggerFileInput() {
                 const reader = new FileReader();
                 
                 reader.onload = function(e) {
-                    const profilePic = document.getElementById('profilePic');
-                    profilePic.style.backgroundImage = `url(${e.target.result})`;
+                    const profilePic = document.querySelectorAll('.profilePic');
+                    profilePic.forEach(pic=>{
+                        pic.style.backgroundImage = `url(${e.target.result})`;
+                        pic.classList.remove("bg-[#e7e7e7]")
+                    })
                 };
                 
                 reader.readAsDataURL(file);
+
+
             } else {
                 alert('Please select a valid image file.');
             }
@@ -514,18 +519,26 @@ function toggleLog(num) {
 }
 
 
-window.addEventListener('resize', function() {
-    const side = document.querySelector(".leftSide");
-    const blur = document.querySelector(".blurEffect")
-    const left = document.querySelector(".leftIcon")
-    if (window.innerWidth >= 768) { // 768px is md breakpoint
-        side.classList.add("hidden");
-        side.classList.remove("absolute", "z-50", "left-2", "top-20");
-        left.classList.remove("fa-xmark")
-        left.classList.add("fa-bars", "hiddens")
-        currentValue = 0;
-    }
+window.addEventListener('resize', function () {
+  const side = document.querySelector(".leftSide");
+  const blur = document.querySelector(".blurEffect");
+  const leftIcons = document.querySelectorAll(".leftIcon");
+
+  if (window.innerWidth >= 768) { // ukuran md Tailwind
+    // pastikan sidebar tersembunyi di desktop
+    side.classList.add("hidden");
+    side.classList.remove("absolute", "z-100", "left-2", "top-20");
+    blur.classList.remove("active");
+    currentValue = 0;
+
+    // reset semua icon jadi bars
+    leftIcons.forEach(icon => {
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+    });
+  }
 });
+
 function togglePage(num) {
     // Hide all pages first
     document.querySelectorAll(".pages").forEach(page => {
@@ -561,15 +574,16 @@ function togglePage(num) {
 }
 
 updateSizeIndicators();
-window.addEventListener('resize', updateSizeIndicators);
+function updateWidthIndicator() {
+        const width = window.innerWidth;
+        document.getElementById('widthValue').textContent = width;
+    }
 
-        function updateWidthIndicator() {
-            const width = window.innerWidth;
-            document.getElementById('widthValue').textContent = width;
-        }
+    // Run once on load
+    updateWidthIndicator();
 
-        updateWidthIndicator();
-        window.addEventListener('resize', updateWidthIndicator);
+    // Update on window resize
+    window.addEventListener('resize', updateWidthIndicator);
     </script>
 </body>
 </html>
