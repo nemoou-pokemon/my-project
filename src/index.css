@@ -4,7 +4,7 @@
     @apply rounded-full bg-white w-[1rem] h-[1rem] sm:w-[min(5rem,3vw)] sm:h-[min(5rem,3vw)] my-0.5 sm:my-4;
   }
   .profC{
-    @apply rounded-full  w-15 h-15 sm:w-[min(10rem,8vw)] sm:h-[min(10rem,8vw)] ;
+    @apply rounded-full  w-20 h-20 sm:w-[min(10rem,8vw)] sm:h-[min(10rem,8vw)] ;
   }
   .pop {
     @apply rounded-4xl p-1 bg-[#F3EBE4] flex items-center; /* <-- align items vertically */
@@ -48,7 +48,7 @@ body{
     @apply border-[#00c66a] border-[1.5px]
   }
   .profileSet{
-    @apply outline-0 border-[0.5px] border-[#f7d84c] rounded-md py-2 px-4 bg-white
+    @apply outline-0 border-[0.5px] border-[#f7d84c] rounded-md py-1 px-2 sm:py-2 sm:px-4 bg-white text-[0.75rem] sm:text-[1rem]
   }
   .on{
     @apply relative opacity-100 visible translate-x-[0px] transition-all duration-300 ease-in-out ;
