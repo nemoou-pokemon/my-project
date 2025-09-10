@@ -47,7 +47,7 @@
                     </div>
                  </div>
                     <div class="flex flex-col ">
-                        <div onclick="togglePage(2)"  class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-house"></i></div>
+                        <div onclick="togglePage(2)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-house"></i></div>
                         <div onclick="togglePage(3)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-regular fa-calendar"></i></div>
                         <div onclick="togglePage(4)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-receipt"></i></div>
                         <div onclick="togglePage(5)" class="h-[1.75rem] w-[1.75rem] circle flex items-center justify-center"><i class="fa-solid fa-circle-info"></i></div>
@@ -77,7 +77,7 @@
                 </form>
             </div>
         </div>
-        <div id="2"   class="pages pages2 flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9 ">
+        <div id="2"   class=" pages pages2 flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9 ">
             <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
                 <i onclick="toggleLeft()" class="w-[3rem] text-left flex-shrink-0 leftIcon z-100 fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">X TKJ 2</h1>
@@ -98,7 +98,7 @@
                     <p class="popText">Special</p>
                 </div>
             </div>
-            <div class="flex flex-col mt-6 overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div class="  flex flex-col mt-6 overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                 <div class="cards main mb-6">
                     <p class="titles ml-0">Main</p>
                     <div class="outline-0  gridBox">
@@ -252,7 +252,7 @@
                 </p>
             </div>
         </div>
-        <div id="6" class="overflow-hidden pages pages6 hiddens flex-6 min-w-0 relative flex-col bg-[#FBF9F7] px-4 pt-2 md:px-12 md:pt-9">
+        <div id="6" class=" pages pages6 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9">
             <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
                 <i onclick="toggleLeft()" class="w-[3rem] text-left flex-shrink-0 leftIcon z-100 fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">Account Settings</h1>
@@ -277,9 +277,8 @@
                     <p class="popText">Delete</p>
                 </div>
             </div>
-            <div class="w-full h-min  flex gap-5 sm:gap-4 mt-5  justify-between sm:justify-start">
-                <div id="profile-panel" class="py-6 flex-col bg-[#f7d558] px-6 flex rounded-xl w-full h-max  on">
-                    <h1 class="font-[Poppins] font-[450] text-[1rem] sm:text-[min(4rem,2vw)] mb-3">Profile Information</h1>
+            <div id="profile-panel" class="py-6  bg-[#f7d558] px-6  rounded-xl                     flex flex-col mt-6 overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden on">
+                <h1 class="font-[Poppins] font-[450] text-[1rem] sm:text-[min(4rem,2vw)] mb-3">Profile Information</h1>
                     <div class="gap-2 sm:gap-5 flex w-full items-center ">
                         <div class="relative  p-1">
                             <div   class="profilePic profC bg-[#e7e7e7] bg-cover bg-center bg-no-repeat"></div>
@@ -306,11 +305,25 @@
                                 <input type="submit" value="Save Configuration" class="rounded-full  shadow text-[0.65rem] sm:text-[0.9rem]  py-1.5 mt-4 font-[Poppins] border-2 border-[#fffa9f]  text-[#ffb007] bg-[#ffff]">
                             </form>
                     </div>
-                </div>
-                <div id="security-panel" class="bg-[#f79258] rounded-xl w-full h-[60vh] off"></div>
-                <div id="privacy-panel" class="bg-[#c558f7] rounded-xl w-full h-[60vh] off"></div>
-                <div id="delete-panel" class="bg-[#5870f7] rounded-xl w-full h-[60vh] off"></div>
             </div>
+            <div id="security-panel" class="py-6  bg-[#ef9460] px-6  rounded-xl                     flex flex-col mt-6 overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden off">
+                <h1 class="font-[Poppins] font-[450] text-[1rem] sm:text-[min(4rem,2vw)] mb-3">Security Settings</h1>
+                    <div class="bg-[#d68455] rounded-xl w-[100%] py-6 px-4 ">
+                        <form action="">
+                            <h1 class="font-[Poppins] font-[450] text-[0.85rem] sm:text-[min(4rem,1.75vw)] mb-3">Change Password</h1>
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">Current Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">New Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+                            
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">Confirm Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+                        </form>
+                    </div>
+            </div>
+            <div id="privacy-panel" class="bg-[#c558f7] rounded-xl w-full h-[60vh] mt-6 off"></div>
+            <div id="delete-panel" class="bg-[#5870f7] rounded-xl w-full h-[60vh] mt-6 off"></div>
         </div>
         <div class="h-full bg-[#F3EBE4] rounded-2xl shadow hidden sm:flex flex-3  flex-col ">
             <div class="flex flex-col w-full">
