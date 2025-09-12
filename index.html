@@ -18,7 +18,7 @@
     <div class="width-indicator" id="heightIndicator" style="left: 160px;">
     Height: <span id="heightValue"></span>px
 </div> -->
-<div onclick="blurCancel(this)" class="blurEffect "></div>
+<div onclick="blurCancel(this)" class=" blurEffect "></div>
     <div class="flex flex-row gap-2 w-[98%] h-[95vh] m-auto mt-2">
         <div class="flex-[0.6] w-[5rem] bg-[#F3EBE4] rounded-xl shadow hidden md:flex flex-col items-center justify-between">
             <div>
@@ -253,12 +253,12 @@
             </div>
         </div>
         <div id="6" class=" pages pages6 hiddens flex-6 min-w-0 flex flex-col bg-[#FBF9F7] px-4 pt-2  md:px-12 md:pt-9">
-            <div class="w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
+            <div class=" w-full h-min  flex gap-5 sm:gap-4  justify-between sm:justify-start">
                 <i onclick="toggleLeft()" class="w-[3rem] text-left flex-shrink-0 leftIcon z-100 fa-solid fa-bars text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block md:!hidden"></i>
                 <h1 class="font-[Poppins] text-[min(4rem,5.25vw)] leading-[min(4rem,7vw)]">Account Settings</h1>
                 <i class="w-[3rem] text-right flex-shrink-0 fa-solid fa-newspaper text-[min(3rem,4.75vw)] sm:text-[min(2.5rem,4vw)] mt-[min(4rem,1.25vw)]  !block sm:!hidden"></i>
             </div>
-            <div class="flex-shrink-0 outline-none flex gap-3 mt-6 overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" 
+            <div class=" flex-shrink-0 outline-none flex gap-3 mt-6 overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" 
                    onwheel="handleHorizontalScroll(event)">
                 <div  class="pop" data-panel="profile">
                     <div class="circle my-0.5 flex items-center justify-center"><i class="fa-solid fa-user sm:text-[min(3rem,1.75vw)] text-[0.75rem]"></i></div>
@@ -322,8 +322,39 @@
                         </form>
                     </div>
             </div>
-            <div id="privacy-panel" class="bg-[#c558f7] rounded-xl w-full h-[60vh] mt-6 off"></div>
-            <div id="delete-panel" class="bg-[#5870f7] rounded-xl w-full h-[60vh] mt-6 off"></div>
+            <div id="privacy-panel" class="py-6  bg-[#ef9460] px-6  rounded-xl                     flex flex-col mt-6 overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden off">
+                <h1 class="font-[Poppins] font-[450] text-[1rem] sm:text-[min(4rem,2vw)] mb-3">Sigma Settings</h1>
+                    <div class="bg-[#d68455] rounded-xl w-[100%] py-6 px-4 ">
+                        <form action="">
+                            <h1 class="font-[Poppins] font-[450] text-[0.85rem] sm:text-[min(4rem,1.75vw)] mb-3">Change Password</h1>
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">Current Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">New Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+                            
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">Confirm Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+                        </form>
+                    </div>
+            </div>
+            <div id="delete-panel" class="py-6  bg-[#ef9460] px-6  rounded-xl                     flex flex-col mt-6 overflow-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden off">
+                <h1 class="font-[Poppins] font-[450] text-[1rem] sm:text-[min(4rem,2vw)] mb-3">Alpha Settings</h1>
+                    <div class="bg-[#d68455] rounded-xl w-[100%] py-6 px-4 ">
+                        <form action="">
+                            <h1 class="font-[Poppins] font-[450] text-[0.85rem] sm:text-[min(4rem,1.75vw)] mb-3">Change Password</h1>
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">Current Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">New Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+                            
+                            <label for="currentPass" class="font-[550] text-[#343434] block mb-2">Confirm Password</label>
+                            <input type="text" id="currentPass" class="mb-5 focus:outline-2 focus:border-[#d68455] outline-white border-[#7d4d32] rounded-md border-1 p-2 w-full">
+                        </form>
+                    </div>
+            </div>
+            
         </div>
         <div class="h-full bg-[#F3EBE4] rounded-2xl shadow hidden sm:flex flex-3  flex-col ">
             <div class="flex flex-col w-full">
