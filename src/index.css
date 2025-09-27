@@ -26,6 +26,9 @@
 body{
   overflow: hidden;
 }
+.default{
+  all: revert;
+}
 
 
 @layer components{
