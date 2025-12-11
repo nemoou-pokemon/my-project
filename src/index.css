@@ -18,6 +18,9 @@
   .card{
     @apply w-full h-full 
   }
+  .pointer{
+    @apply cursor-pointer
+  }
 }
 
 .hiddens{
